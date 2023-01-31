@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-const app = () => {
-    return (
-        <div>
-            <h1>React App</h1>
-        </div>
-    )
-}
+const app = () => (
+    <Router>
+        <Route path="/" exact component={Join} />
+        <Route path="/chat" component={Chat} />
+    </Router>
+);
 
 export default app
