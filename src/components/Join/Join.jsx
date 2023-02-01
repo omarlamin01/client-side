@@ -14,22 +14,31 @@ const Join = () => {
                 </h1>
                 <div>
                     <input
+                        id="name-input"
                         type="text"
-                        placeholder=""
+                        placeholder={name}
                         className="joinInput"
-                        onChange={(e) => { console.log(e.target.value) }}
+                        onChange={(e) => {
+                            setName(e.target.value)
+                        }}
                     />
                 </div>
                 <div>
                     <input
+                        id="room-input"
                         type="text"
-                        placeholder=""
+                        placeholder={room}
                         className="joinInput mt-20"
-                        onChange={(e) => { console.log(e.target.value) }}
+                        onChange={(e) => {
+                            setRoom(e.target.value)
+                        }}
                     />
                 </div>
-                <Link to={"/chat"}>
-                    <button className={"button mt-20"} type={"submit"} >Sign In</button>
+                <Link
+                    onClick={event => (!name || !room) ? event.preventDefault() : null}
+                    to={`/chat?name=${name}&room=${room}`}
+                >
+                    <button className={"button mt-20"} type={"submit"}>Sign In</button>
                 </Link>
             </div>
         </div>
