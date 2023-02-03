@@ -16,7 +16,8 @@ const Join = () => {
                     <input
                         id="name-input"
                         type="text"
-                        placeholder={name}
+                        value={name}
+                        placeholder={"User name"}
                         className="joinInput"
                         onChange={(e) => {
                             setName(e.target.value)
@@ -27,7 +28,8 @@ const Join = () => {
                     <input
                         id="room-input"
                         type="text"
-                        placeholder={room}
+                        value={room}
+                        placeholder={"room"}
                         className="joinInput mt-20"
                         onChange={(e) => {
                             setRoom(e.target.value)
